@@ -25,7 +25,7 @@ st.set_page_config(
 )
 
 import os
-API_URL = os.getenv("API_URL", "http://localhost:8000/analyze-crime")
+API_URL = os.getenv("API_URL", "http://0.0.0.0:8000/analyze-crime")
 # ---------------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------------
