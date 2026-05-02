@@ -41,6 +41,22 @@ It's not a chatbot. It doesn't guess. Every answer is grounded in actual retriev
 - 📊 **LangSmith tracing** — every LLM call tracked for debugging and optimization
 
 ---
+
+## 🌐 Live Demo
+
+> **Deployed on Render — try it now!**
+> 
+> 🔗 **[https://crimescope-ai-4hhw.onrender.com](https://crimescope-ai-4hhw.onrender.com/)**
+
+| Endpoint | URL |
+|----------|-----|
+| 🎨 Streamlit UI | [crimescope-ai-4hhw.onrender.com](https://crimescope-ai-4hhw.onrender.com/) |
+| 📡 API Docs (Swagger) | [crimescope-ai-4hhw.onrender.com/docs](https://crimescope-ai-4hhw.onrender.com/docs) |
+| ❤️ Health Check | [crimescope-ai-4hhw.onrender.com/health](https://crimescope-ai-4hhw.onrender.com/health) |
+
+>  ⚠️ **Note:** On the free tier, the first request may take 30–50 seconds to load (cold start).
+> Please wait a moment — subsequent requests are fast!
+---
 ## 🏗️ How It Works
 
 ```text
