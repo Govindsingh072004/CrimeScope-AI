@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- added by structure.py ---
+# Python
+*.pyc
+*.pyo
+# Virtual environment
+.venv/
+# Secrets — never commit API keys
+# Raw PDFs can be large; share them separately
+data/raw_pdfs/
+# Logs
+logs/

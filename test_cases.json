@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "category": "Robbery + Trespass",
+    "input": "A person broke into a house at night, threatened the owner with a knife, and stole valuables worth 50,000 rupees.",
+    "expected_crime_types": ["House-trespass", "Theft", "Criminal Intimidation"],
+    "expected_acts": ["Bharatiya Nyaya Sanhita, 2023", "Indian Penal Code, 1860"]
+  },
+  {
+    "id": 2,
+    "category": "Cybercrime",
+    "input": "A hacker accessed someone's bank account without permission and transferred 2 lakh rupees to another account.",
+    "expected_crime_types": ["Unauthorized Access", "Cyber Fraud"],
+    "expected_acts": ["Information Technology Act, 2000", "Indian Penal Code, 1860"]
+  },
+  {
+    "id": 3,
+    "category": "Domestic Violence",
+    "input": "A husband physically assaulted his wife and threatened to kill her if she told anyone. She has visible injuries.",
+    "expected_crime_types": ["Domestic Violence", "Physical Assault", "Criminal Intimidation"],
+    "expected_acts": ["Protection of Women from Domestic Violence Act, 2005", "Bharatiya Nyaya Sanhita, 2023"]
+  },
+  {
+    "id": 4,
+    "category": "Drug Trafficking",
+    "input": "Police caught a man carrying 5 kg of heroin hidden in his car near the border.",
+    "expected_crime_types": ["Drug Possession", "Drug Trafficking"],
+    "expected_acts": ["Narcotic Drugs and Psychotropic Substances Act, 1985"]
+  },
+  {
+    "id": 5,
+    "category": "Child Abuse (POCSO)",
+    "input": "A 45-year-old man sexually assaulted a 12-year-old girl in his neighbourhood.",
+    "expected_crime_types": ["Sexual Assault", "Child Abuse"],
+    "expected_acts": ["Protection of Children from Sexual Offences Act, 2012", "Bharatiya Nyaya Sanhita, 2023"]
+  },
+  {
+    "id": 6,
+    "category": "Bribery / Corruption",
+    "input": "A government officer demanded 50,000 rupees bribe to approve a building construction permit.",
+    "expected_crime_types": ["Bribery", "Corruption"],
+    "expected_acts": ["Prevention of Corruption Act, 1988"]
+  },
+  {
+    "id": 7,
+    "category": "Hit and Run",
+    "input": "A drunk driver hit a pedestrian on the road and fled without stopping. The victim was seriously injured.",
+    "expected_crime_types": ["Rash Driving", "Hit and Run", "Drunk Driving"],
+    "expected_acts": ["Motor Vehicles Act, 1988", "Bharatiya Nyaya Sanhita, 2023"]
+  },
+  {
+    "id": 8,
+    "category": "Dowry Harassment",
+    "input": "A woman was harassed and physically abused by her in-laws for not bringing enough dowry from her parents.",
+    "expected_crime_types": ["Dowry Harassment", "Domestic Violence"],
+    "expected_acts": ["Dowry Prohibition Act, 1961", "Bharatiya Nyaya Sanhita, 2023"]
+  },
+  {
+    "id": 9,
+    "category": "Ambiguous / Incomplete",
+    "input": "Someone stole something from a shop.",
+    "expected_crime_types": ["Theft"],
+    "expected_acts": ["Indian Penal Code, 1860", "Bharatiya Nyaya Sanhita, 2023"],
+    "note": "Ambiguous case — minimal detail provided"
+  },
+  {
+    "id": 10,
+    "category": "Money Laundering",
+    "input": "A businessman deposited crores of rupees earned through illegal drug trade into multiple shell companies to make it appear as legitimate income.",
+    "expected_crime_types": ["Money Laundering", "Drug Trafficking"],
+    "expected_acts": ["Prevention of Money Laundering Act, 2002", "Narcotic Drugs and Psychotropic Substances Act, 1985"]
+  }
+]

@@ -1,0 +1,79 @@
+# =============================================================================
+# CrimeScope-AI — requirements.txt
+# =============================================================================
+# Install everything:  pip install -r requirements.txt
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# CORE — Environment & Config
+# -----------------------------------------------------------------------------
+python-dotenv                  # Loads .env file (API keys, settings)
+
+
+# -----------------------------------------------------------------------------
+# LANGCHAIN ECOSYSTEM
+# These packages work together — do not mix major versions
+# -----------------------------------------------------------------------------
+langchain                      # Core LangChain framework
+langchain-core                 # Base abstractions (Runnables, prompts, etc.)
+langchain-community            # Community integrations (MultiQueryRetriever, etc.)
+langchain-google-genai         # Gemini LLM + Google embeddings via LangChain
+langchain-groq                 # Groq LLM via LangChain (used for fast MQR)
+langsmith                      # MLOps tracing — tracks every LLM call + latency
+langchain-text-splitters
+langchain-chroma
+sentence-transformers
+langchain-huggingface
+# -----------------------------------------------------------------------------
+# LLM PROVIDERS
+# -----------------------------------------------------------------------------
+google-generativeai            # Google Gemini SDK (gemini-2.0-flash)
+groq                           # Groq SDK (llama-3.3-70b — used for MQR only)
+
+
+# -----------------------------------------------------------------------------
+# VECTOR STORE
+# -----------------------------------------------------------------------------
+chromadb                       # Local persistent vector store (pre-built, ship with repo)
+
+
+# -----------------------------------------------------------------------------
+# PDF PROCESSING — for ingestion.py
+# -----------------------------------------------------------------------------
+pypdf                          # Fast PDF text extraction (primary)
+pdfplumber                     # Fallback PDF extractor (better for complex PDFs)
+
+
+# -----------------------------------------------------------------------------
+# API LAYER
+# -----------------------------------------------------------------------------
+fastapi                        # Async REST API framework
+uvicorn[standard]              # ASGI server to run FastAPI (with websocket support)
+httpx                          # Async HTTP client (Streamlit → FastAPI calls)
+
+
+# -----------------------------------------------------------------------------
+# UI LAYER
+# -----------------------------------------------------------------------------
+streamlit                      # Web UI with live thinking/status display
+
+
+# -----------------------------------------------------------------------------
+# DATA VALIDATION
+# -----------------------------------------------------------------------------
+pydantic                       # Output schema validation (schemas.py)
+pydantic-settings              # Settings management from .env
+
+
+# -----------------------------------------------------------------------------
+# TOKENIZATION — for accurate chunk size calculation
+# -----------------------------------------------------------------------------
+tiktoken                       # OpenAI tokenizer (works for estimating token counts)
+
+
+# -----------------------------------------------------------------------------
+# UTILITIES
+# -----------------------------------------------------------------------------
+tqdm                           # Progress bars during PDF ingestion
+tenacity                       # Retry logic for flaky API calls
