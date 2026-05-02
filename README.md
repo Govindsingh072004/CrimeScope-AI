@@ -41,59 +41,59 @@ It's not a chatbot. It doesn't guess. Every answer is grounded in actual retriev
 - 📊 **LangSmith tracing** — every LLM call tracked for debugging and optimization
 
 ---
-
 ## 🏗️ How It Works
-User Input (Crime Description)
-│
-▼
-┌─────────────────────────┐
-│ Query Understanding │ ← Groq generates multi-angle search queries
-└────────────┬────────────┘
-│
-▼
-┌─────────────────────────┐
-│ Vector Retrieval │ ← ChromaDB similarity search (MMR, top-12)
-│ (ChromaDB + MiniLM) │ sentence-transformers/all-MiniLM-L6-v2
-└────────────┬────────────┘
-│
-▼
-┌─────────────────────────┐
-│ Legal Reasoning │ ← Groq llama-3.3-70b with structured Pydantic output
-│ + JSON Generation │ System prompt = Senior Criminal Advocate persona
-└────────────┬────────────┘
-│
-▼
-Structured JSON Response
-{crime_type, act, section, justification}
 
-text
+```text
+User Input (Crime Description)
+        │
+        ▼
+┌─────────────────────────┐
+│   Query Understanding    │  ← Groq generates multi-angle search queries
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│   Vector Retrieval       │  ← ChromaDB similarity search (MMR, top-12)
+│   (ChromaDB + MiniLM)   │     sentence-transformers/all-MiniLM-L6-v2
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│   Legal Reasoning        │  ← Groq llama-3.3-70b with structured Pydantic output
+│   + JSON Generation      │     System prompt = Senior Criminal Advocate persona
+└────────────┬────────────┘
+             │
+             ▼
+     Structured JSON Response
+     {crime_type, act, section, justification}
+```
 
 ---
-
 ## 📁 Project Structure
+
+```text
 CrimeScope-AI/
 ├── Data/
-│ └── raw_pdfs/ # Drop all 17 legal act PDFs here
-├── chroma_db/ # Auto-generated after running ingestion
-├── logs/ # Auto-generated log files
+│   └── raw_pdfs/            # Drop all 17 legal act PDFs here
+├── chroma_db/               # Auto-generated after running ingestion
+├── logs/                    # Auto-generated log files
 ├── src/
-│ ├── config.py # Central config — all paths, models, settings
-│ ├── ingestion.py # PDF → chunk → embed → ChromaDB
-│ ├── retriever.py # ChromaDB vector search + MMR
-│ ├── chain.py # Full RAG pipeline (retrieve → reason → generate)
-│ ├── prompts.py # LLM prompt templates
-│ └── schemas.py # Pydantic output schemas
+│   ├── config.py            # Central config — all paths, models, settings
+│   ├── ingestion.py         # PDF → chunk → embed → ChromaDB
+│   ├── retriever.py         # ChromaDB vector search + MMR
+│   ├── chain.py             # Full RAG pipeline (retrieve → reason → generate)
+│   ├── prompts.py           # LLM prompt templates
+│   └── schemas.py           # Pydantic output schemas
 ├── tests/
-│ └── test_cases.py # Automated test suite (10 scenarios)
-├── api.py # FastAPI server
-├── app.py # Streamlit web UI
-├── ingest_run.py # Run this once to build vector store
-├── test_cases.json # Sample test inputs and expected outputs
+│   └── test_cases.py        # Automated test suite (10 scenarios)
+├── api.py                   # FastAPI server
+├── app.py                   # Streamlit web UI
+├── ingest_run.py            # Run this once to build vector store
+├── test_cases.json          # Sample test inputs and expected outputs
 ├── requirements.txt
 ├── .env.example
 └── README.md
-
-text
+```
 
 ---
 
